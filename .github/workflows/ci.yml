@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # `npm test` builds first, so this also proves the grammar compiles.
+      - run: npm test
+      # The demo doubles as a smoke test: it fails if the grammar stops
+      # producing comment/keyword/string/number/meta/symbol scopes.
+      - run: npm run demo
+      # `dist/` is committed for CDN and git-dependency consumers; fail loudly
+      # if it no longer matches `src/`.
+      - name: Verify committed dist/ is up to date
+        run: git diff --exit-code dist/
