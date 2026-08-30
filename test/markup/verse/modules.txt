@@ -1,0 +1,7 @@
+using { /Verse.org/Random }
+Utils := import(/MyProject/Utilities)
+using { Utils }
+
+FindFirst(Items:[]int)<decides>:int =
+    first (Item : Items, Item > 0):
+        Item

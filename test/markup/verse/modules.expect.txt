@@ -1,0 +1,7 @@
+<span class="hljs-keyword">using</span> { <span class="hljs-symbol">/Verse.org/Random</span> }
+Utils <span class="hljs-operator">:=</span> <span class="hljs-keyword">import</span>(<span class="hljs-symbol">/MyProject/Utilities</span>)
+<span class="hljs-keyword">using</span> { Utils }
+
+<span class="hljs-title function_">FindFirst</span>(Items<span class="hljs-operator">:</span>[]<span class="hljs-type">int</span>)<span class="hljs-meta">&lt;decides&gt;</span><span class="hljs-operator">:</span><span class="hljs-type">int</span> <span class="hljs-operator">=</span>
+    <span class="hljs-keyword">first</span> (Item <span class="hljs-operator">:</span> Items, Item <span class="hljs-operator">&gt;</span> <span class="hljs-number">0</span>)<span class="hljs-operator">:</span>
+        Item
