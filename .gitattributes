@@ -1,0 +1,4 @@
+# Snapshot tests compare highlighted output byte-for-byte, so line endings must
+# be identical on every platform.
+* text=auto eol=lf
+*.woff2 binary
