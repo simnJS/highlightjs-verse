@@ -1,0 +1,24 @@
+# Comments may contain "quotes", 'apostrophes', don't-break contractions,
+# and even <# or #> sequences that must not start a block comment.
+
+Message := "# this is not a comment"
+Markup := "<# neither is this #>"
+Quote := "she said \"hi\""
+
+# Division must not be mistaken for a module path.
+Average := Total / Count
+Ratio := Width/Height
+
+# Comparison must not be mistaken for a specifier.
+Check(A:int, B:int)<decides>:void =
+    A < B
+    A > B
+    A <> B
+    A <= B
+
+# Ranges sit next to integers without whitespace.
+Span := 0..10
+Reverse := 10..0
+
+# Specifiers on a call target, then a normal indexed access.
+Value := Lookup[Key] or 0

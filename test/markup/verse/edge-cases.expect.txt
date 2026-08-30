@@ -1,0 +1,24 @@
+<span class="hljs-comment"># Comments may contain &quot;quotes&quot;, &#x27;apostrophes&#x27;, don&#x27;t-break contractions,</span>
+<span class="hljs-comment"># and even &lt;# or #&gt; sequences that must not start a block comment.</span>
+
+Message <span class="hljs-operator">:=</span> <span class="hljs-string">&quot;# this is not a comment&quot;</span>
+Markup <span class="hljs-operator">:=</span> <span class="hljs-string">&quot;&lt;# neither is this #&gt;&quot;</span>
+Quote <span class="hljs-operator">:=</span> <span class="hljs-string">&quot;she said <span class="hljs-char escape_">\&quot;</span>hi<span class="hljs-char escape_">\&quot;</span>&quot;</span>
+
+<span class="hljs-comment"># Division must not be mistaken for a module path.</span>
+Average <span class="hljs-operator">:=</span> Total <span class="hljs-operator">/</span> Count
+Ratio <span class="hljs-operator">:=</span> Width<span class="hljs-operator">/</span>Height
+
+<span class="hljs-comment"># Comparison must not be mistaken for a specifier.</span>
+<span class="hljs-title function_">Check</span>(A<span class="hljs-operator">:</span><span class="hljs-type">int</span>, B<span class="hljs-operator">:</span><span class="hljs-type">int</span>)<span class="hljs-meta">&lt;decides&gt;</span><span class="hljs-operator">:</span><span class="hljs-type">void</span> <span class="hljs-operator">=</span>
+    A <span class="hljs-operator">&lt;</span> B
+    A <span class="hljs-operator">&gt;</span> B
+    A <span class="hljs-operator">&lt;&gt;</span> B
+    A <span class="hljs-operator">&lt;=</span> B
+
+<span class="hljs-comment"># Ranges sit next to integers without whitespace.</span>
+Span <span class="hljs-operator">:=</span> <span class="hljs-number">0</span><span class="hljs-operator">..</span><span class="hljs-number">10</span>
+Reverse <span class="hljs-operator">:=</span> <span class="hljs-number">10</span><span class="hljs-operator">..</span><span class="hljs-number">0</span>
+
+<span class="hljs-comment"># Specifiers on a call target, then a normal indexed access.</span>
+Value <span class="hljs-operator">:=</span> <span class="hljs-title function_">Lookup</span>[Key] <span class="hljs-keyword">or</span> <span class="hljs-number">0</span>
