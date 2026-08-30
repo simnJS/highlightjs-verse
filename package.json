@@ -1,0 +1,57 @@
+{
+  "name": "highlightjs-verse",
+  "version": "1.0.0",
+  "description": "Verse (Epic Games / UEFN) language grammar for highlight.js",
+  "type": "module",
+  "main": "dist/verse.cjs",
+  "module": "dist/verse.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/verse.es.js",
+      "require": "./dist/verse.cjs"
+    }
+  },
+  "files": [
+    "src",
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "pretest": "npm run build",
+    "test": "mocha",
+    "test-markup": "npm test",
+    "demo": "node tools/demo.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simnJS/highlightjs-verse.git"
+  },
+  "keywords": [
+    "highlight.js",
+    "highlightjs",
+    "syntax",
+    "highlighting",
+    "verse",
+    "uefn",
+    "fortnite",
+    "epic-games",
+    "unreal-engine"
+  ],
+  "author": "Simon GAY (simnJS) <simnkrystal@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/simnJS/highlightjs-verse/issues"
+  },
+  "homepage": "https://github.com/simnJS/highlightjs-verse",
+  "peerDependencies": {
+    "highlight.js": "^11.11.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "^1.0.0",
+    "glob": "^11.0.0",
+    "highlight.js": "^11.11.1",
+    "mocha": "^11.2.2",
+    "rollup": "^4.0.2",
+    "should": "^13.2.3"
+  }
+}

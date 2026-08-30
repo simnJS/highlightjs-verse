@@ -1,0 +1,7 @@
+{
+  "spec": [
+    "test/markup.js",
+    "test/detect.js"
+  ],
+  "checkLeaks": true
+}
