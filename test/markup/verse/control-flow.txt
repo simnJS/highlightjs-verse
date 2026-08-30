@@ -1,0 +1,31 @@
+CheckValue(Value:int):void =
+    if (Value > 0):
+        Print("positive")
+    else if (Value < 0):
+        Print("negative")
+    else:
+        Print("zero")
+
+Iterate(Items:[]int):void =
+    for (Item : Items):
+        Print("{Item}")
+
+    for (Index := 0..Items.Length - 1, Mod[Index, 2] = 0):
+        Print("even index {Index}")
+
+Wait()<suspends>:void =
+    loop:
+        Sleep(1.0)
+        if (IsDone?):
+            break
+
+Describe(State:my_enum):string =
+    case (State):
+        my_enum.Idle => "idle"
+        my_enum.Running => "running"
+        _ => "unknown"
+
+Cleanup()<suspends>:void =
+    defer:
+        Print("done")
+    Sleep(2.0)

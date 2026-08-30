@@ -1,0 +1,11 @@
+Count <span class="hljs-operator">:</span> <span class="hljs-type">int</span> <span class="hljs-operator">=</span> <span class="hljs-number">42</span>
+Negative <span class="hljs-operator">:</span> <span class="hljs-type">int</span> <span class="hljs-operator">=</span> <span class="hljs-operator">-</span><span class="hljs-number">7</span>
+Pi <span class="hljs-operator">:</span> <span class="hljs-type">float</span> <span class="hljs-operator">=</span> <span class="hljs-number">3.14159</span>
+Scientific <span class="hljs-operator">:</span> <span class="hljs-type">float</span> <span class="hljs-operator">=</span> <span class="hljs-number">1.5e10</span>
+Small <span class="hljs-operator">:</span> <span class="hljs-type">float</span> <span class="hljs-operator">=</span> <span class="hljs-number">2.5e-3</span>
+Hex <span class="hljs-operator">:</span> <span class="hljs-type">int</span> <span class="hljs-operator">=</span> <span class="hljs-number">0xDEADBEEF</span>
+HexLower <span class="hljs-operator">:</span> <span class="hljs-type">int</span> <span class="hljs-operator">=</span> <span class="hljs-number">0xff</span>
+Range <span class="hljs-operator">:=</span> <span class="hljs-number">0</span><span class="hljs-operator">..</span><span class="hljs-number">10</span>
+Inclusive <span class="hljs-operator">:=</span> <span class="hljs-number">1</span><span class="hljs-operator">..</span>Count
+Special <span class="hljs-operator">:</span> <span class="hljs-type">float</span> <span class="hljs-operator">=</span> <span class="hljs-literal">Inf</span>
+NotANumber <span class="hljs-operator">:</span> <span class="hljs-type">float</span> <span class="hljs-operator">=</span> <span class="hljs-literal">NaN</span>

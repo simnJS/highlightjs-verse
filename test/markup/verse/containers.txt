@@ -1,0 +1,14 @@
+Numbers : []int = array{1, 2, 3}
+Words : []string = array{"alpha", "beta"}
+Lookup : [string]int = map{"one" => 1, "two" => 2}
+Pair : tuple(int, float) = (7, 1.5)
+Present : ?int = option{5}
+Absent : ?int = false
+
+Use()<decides><transacts>:void =
+    First := Numbers[0]
+    Score := Lookup["one"]
+    (Left, Right) := Pair
+    Inner := Present?
+    Sliced := Numbers.Slice[1]
+    Total := Numbers.Length

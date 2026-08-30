@@ -1,0 +1,31 @@
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+// Go uses := for short variable declarations, just like Verse.
+type Player struct {
+	Name  string
+	Score int
+}
+
+func LoadPlayers(raw string) []Player {
+	players := make([]Player, 0)
+	for _, line := range strings.Split(raw, "\n") {
+		if line == "" {
+			continue
+		}
+		p := Player{Name: line, Score: 0}
+		players = append(players, p)
+	}
+	return players
+}
+
+func main() {
+	players := LoadPlayers("alice\nbob")
+	for i := 0; i < len(players); i++ {
+		fmt.Printf("%s: %d\n", players[i].Name, players[i].Score)
+	}
+}

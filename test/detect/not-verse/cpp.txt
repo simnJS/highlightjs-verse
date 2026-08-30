@@ -1,0 +1,34 @@
+#include <algorithm>
+#include <map>
+#include <string>
+#include <vector>
+
+namespace game {
+
+class Player {
+ public:
+  explicit Player(std::string name) : name_(std::move(name)), score_(0) {}
+
+  bool IsWinner(int threshold) const {
+    return score_ >= threshold && !name_.empty();
+  }
+
+  void AddScore(int amount) { score_ += amount; }
+
+ private:
+  std::string name_;
+  int score_;
+};
+
+std::vector<Player> LoadPlayers(const std::map<std::string, int>& raw) {
+  std::vector<Player> players;
+  players.reserve(raw.size());
+  for (const auto& [name, score] : raw) {
+    Player p(name);
+    p.AddScore(score);
+    players.push_back(p);
+  }
+  return players;
+}
+
+}  // namespace game

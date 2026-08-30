@@ -1,0 +1,14 @@
+Numbers <span class="hljs-operator">:</span> []<span class="hljs-type">int</span> <span class="hljs-operator">=</span> <span class="hljs-type">array</span>{<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>}
+Words <span class="hljs-operator">:</span> []<span class="hljs-type">string</span> <span class="hljs-operator">=</span> <span class="hljs-type">array</span>{<span class="hljs-string">&quot;alpha&quot;</span>, <span class="hljs-string">&quot;beta&quot;</span>}
+Lookup <span class="hljs-operator">:</span> [<span class="hljs-type">string</span>]<span class="hljs-type">int</span> <span class="hljs-operator">=</span> <span class="hljs-type">map</span>{<span class="hljs-string">&quot;one&quot;</span> <span class="hljs-operator">=&gt;</span> <span class="hljs-number">1</span>, <span class="hljs-string">&quot;two&quot;</span> <span class="hljs-operator">=&gt;</span> <span class="hljs-number">2</span>}
+Pair <span class="hljs-operator">:</span> <span class="hljs-type">tuple</span>(<span class="hljs-type">int</span>, <span class="hljs-type">float</span>) <span class="hljs-operator">=</span> (<span class="hljs-number">7</span>, <span class="hljs-number">1.5</span>)
+Present <span class="hljs-operator">:</span> <span class="hljs-operator">?</span><span class="hljs-type">int</span> <span class="hljs-operator">=</span> <span class="hljs-type">option</span>{<span class="hljs-number">5</span>}
+Absent <span class="hljs-operator">:</span> <span class="hljs-operator">?</span><span class="hljs-type">int</span> <span class="hljs-operator">=</span> <span class="hljs-literal">false</span>
+
+<span class="hljs-title function_">Use</span>()<span class="hljs-meta">&lt;decides&gt;</span><span class="hljs-meta">&lt;transacts&gt;</span><span class="hljs-operator">:</span><span class="hljs-type">void</span> <span class="hljs-operator">=</span>
+    First <span class="hljs-operator">:=</span> <span class="hljs-title function_">Numbers</span>[<span class="hljs-number">0</span>]
+    Score <span class="hljs-operator">:=</span> <span class="hljs-title function_">Lookup</span>[<span class="hljs-string">&quot;one&quot;</span>]
+    (Left, Right) <span class="hljs-operator">:=</span> Pair
+    Inner <span class="hljs-operator">:=</span> Present<span class="hljs-operator">?</span>
+    Sliced <span class="hljs-operator">:=</span> Numbers.<span class="hljs-title function_">Slice</span>[<span class="hljs-number">1</span>]
+    Total <span class="hljs-operator">:=</span> Numbers.Length

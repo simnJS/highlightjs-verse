@@ -1,0 +1,25 @@
+using { /Verse.org/Concurrency }
+using { /Verse.org/Simulation }
+
+RunAll<public>()<suspends>:void =
+    sync:
+        FirstTask()
+        SecondTask()
+
+RunFirst<public>()<suspends>:void =
+    race:
+        LongTask()
+        Sleep(5.0)
+
+RunAny<public>()<suspends>:void =
+    rush:
+        FastTask()
+        SlowTask()
+
+RunDetached<public>()<suspends>:void =
+    branch:
+        BackgroundTask()
+    Print("continues immediately")
+
+Start<public>():void =
+    spawn{BackgroundTask()}

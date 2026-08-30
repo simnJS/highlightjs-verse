@@ -1,0 +1,33 @@
+<#
+.SYNOPSIS
+    PowerShell uses the same <# ... #> block comment delimiters as Verse.
+.DESCRIPTION
+    Reads a player roster and reports the winners.
+#>
+[CmdletBinding()]
+param(
+    [Parameter(Mandatory = $true)]
+    [string]$RosterPath,
+
+    [int]$Threshold = 10
+)
+
+Set-StrictMode -Version Latest
+$ErrorActionPreference = 'Stop'
+
+function Get-Winners {
+    param([object[]]$Players, [int]$Minimum)
+
+    $winners = @()
+    foreach ($player in $Players) {
+        if ($player.Score -ge $Minimum -and -not [string]::IsNullOrEmpty($player.Name)) {
+            $winners += $player
+        }
+    }
+    return $winners
+}
+
+$roster = Get-Content -Path $RosterPath | ConvertFrom-Json
+Get-Winners -Players $roster -Minimum $Threshold | ForEach-Object {
+    Write-Output "$($_.Name): $($_.Score)"
+}

@@ -1,0 +1,18 @@
+using { /Verse.org/Simulation }
+using { /Fortnite.com/Devices }
+using. /UnrealEngine.com/Temporary/SpatialMath
+
+my_device := class(creative_device):
+
+    @editable
+    TriggerDevice : trigger_device = trigger_device{}
+
+    @editable_number
+    Rounds : int = 3
+
+    Compute<public>(Value:int)<computes>:int = Value * 2
+    Query<public>(Value:int)<decides><transacts>:int = Value
+    Wait<public>()<suspends>:void = Sleep(1.0)
+    Read<public>()<reads>:int = 0
+    Write<public>()<writes>:void = {}
+    Make<public>()<allocates>:my_device = my_device{}

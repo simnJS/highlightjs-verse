@@ -1,0 +1,20 @@
+<span class="hljs-title class_">my_interface</span><span class="hljs-meta">&lt;public&gt;</span> <span class="hljs-operator">:=</span> <span class="hljs-keyword">interface</span><span class="hljs-operator">:</span>
+    <span class="hljs-title function_">Activate</span><span class="hljs-meta">&lt;public&gt;</span>()<span class="hljs-meta">&lt;suspends&gt;</span><span class="hljs-operator">:</span><span class="hljs-type">void</span>
+
+<span class="hljs-title class_">my_base</span><span class="hljs-meta">&lt;public&gt;</span> <span class="hljs-operator">:=</span> <span class="hljs-keyword">class</span><span class="hljs-meta">&lt;abstract&gt;</span><span class="hljs-operator">:</span>
+    Name<span class="hljs-meta">&lt;public&gt;</span> <span class="hljs-operator">:</span> <span class="hljs-type">string</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;base&quot;</span>
+
+<span class="hljs-title class_">my_class</span><span class="hljs-meta">&lt;public&gt;</span> <span class="hljs-operator">:=</span> <span class="hljs-keyword">class</span><span class="hljs-meta">&lt;final&gt;</span>(my_base, my_interface)<span class="hljs-operator">:</span>
+    Health<span class="hljs-meta">&lt;public&gt;</span> <span class="hljs-operator">:</span> <span class="hljs-type">int</span> <span class="hljs-operator">=</span> <span class="hljs-number">100</span>
+
+    <span class="hljs-title function_">Activate</span><span class="hljs-meta">&lt;public&gt;</span>()<span class="hljs-meta">&lt;suspends&gt;</span><span class="hljs-operator">:</span><span class="hljs-type">void</span> <span class="hljs-operator">=</span>
+        <span class="hljs-title function_">Print</span>(<span class="hljs-string">&quot;activated&quot;</span>)
+
+<span class="hljs-title class_">my_struct</span><span class="hljs-meta">&lt;public&gt;</span> <span class="hljs-operator">:=</span> <span class="hljs-keyword">struct</span><span class="hljs-operator">:</span>
+    X<span class="hljs-meta">&lt;public&gt;</span> <span class="hljs-operator">:</span> <span class="hljs-type">float</span> <span class="hljs-operator">=</span> <span class="hljs-number">0.0</span>
+    Y<span class="hljs-meta">&lt;public&gt;</span> <span class="hljs-operator">:</span> <span class="hljs-type">float</span> <span class="hljs-operator">=</span> <span class="hljs-number">0.0</span>
+
+<span class="hljs-title class_">my_enum</span><span class="hljs-meta">&lt;public&gt;</span> <span class="hljs-operator">:=</span> <span class="hljs-keyword">enum</span>{Idle, Running, Stopped}
+
+<span class="hljs-title class_">MyModule</span><span class="hljs-meta">&lt;public&gt;</span> <span class="hljs-operator">:=</span> <span class="hljs-keyword">module</span><span class="hljs-operator">:</span>
+    Version<span class="hljs-meta">&lt;public&gt;</span> <span class="hljs-operator">:</span> <span class="hljs-type">int</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>

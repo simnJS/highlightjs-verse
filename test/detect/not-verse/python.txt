@@ -1,0 +1,23 @@
+# Python uses '#' comments and word operators, like Verse.
+import json
+from dataclasses import dataclass
+
+
+@dataclass
+class Player:
+    name: str
+    score: int = 0
+
+    def is_winner(self, threshold: int) -> bool:
+        return self.score >= threshold and not self.name == ""
+
+
+def load_players(path):
+    with open(path) as handle:
+        data = json.load(handle)
+    return [Player(**row) for row in data if row.get("name")]
+
+
+if __name__ == "__main__":
+    for player in load_players("players.json"):
+        print(f"{player.name}: {player.score}")

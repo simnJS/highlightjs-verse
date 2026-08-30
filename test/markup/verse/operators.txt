@@ -1,0 +1,18 @@
+Sum := 1 + 2
+Difference := 5 - 3
+Product := 4 * 2
+Quotient := 8 / 2
+
+Equal := Sum = 3
+NotEqual := Sum <> 4
+Less := Sum < 10
+LessEqual := Sum <= 10
+Greater := Sum > 0
+GreaterEqual := Sum >= 0
+
+Both := Less and Greater
+Either := Less or Greater
+Negated := not Less
+
+Lambda := (X:int) => X * 2
+Arrow : type{_(:int):int} = Lambda

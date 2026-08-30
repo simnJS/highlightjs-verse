@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Shell scripts contain '#' comments and /usr/bin style paths.
+set -euo pipefail
+
+PLAYERS_FILE="${1:-/etc/game/players.txt}"
+OUTPUT_DIR="/var/log/game"
+
+mkdir -p "$OUTPUT_DIR"
+
+if [[ ! -f "$PLAYERS_FILE" ]]; then
+  echo "missing $PLAYERS_FILE" >&2
+  exit 1
+fi
+
+while IFS=: read -r name score; do
+  if [[ "$score" -ge 10 ]]; then
+    echo "$name is a winner" | tee -a "$OUTPUT_DIR/winners.log"
+  fi
+done < "$PLAYERS_FILE"

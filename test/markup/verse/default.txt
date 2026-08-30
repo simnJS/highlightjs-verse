@@ -1,0 +1,18 @@
+using { /Fortnite.com/Devices }
+using { /Verse.org/Simulation }
+
+# A minimal UEFN device written in Verse.
+hello_world_device := class(creative_device):
+
+    @editable
+    Button : button_device = button_device{}
+
+    var Score<private> : int = 0
+
+    OnBegin<override>()<suspends>:void =
+        Button.InteractedWithEvent.Subscribe(OnInteracted)
+        Print("Hello, Verse!")
+
+    OnInteracted(Agent:agent):void =
+        set Score += 1
+        Print("Score is now {Score}")

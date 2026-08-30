@@ -1,0 +1,14 @@
+<span class="hljs-keyword">var</span> <span class="hljs-variable">Counter</span> <span class="hljs-operator">:</span> <span class="hljs-type">int</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>
+<span class="hljs-keyword">var</span> <span class="hljs-variable">Names</span> <span class="hljs-operator">:</span> []<span class="hljs-type">string</span> <span class="hljs-operator">=</span> <span class="hljs-type">array</span>{}
+
+<span class="hljs-title function_">Increment</span>()<span class="hljs-operator">:</span><span class="hljs-type">void</span> <span class="hljs-operator">=</span>
+    <span class="hljs-keyword">set</span> <span class="hljs-variable">Counter</span> <span class="hljs-operator">+=</span> <span class="hljs-number">1</span>
+    <span class="hljs-keyword">set</span> <span class="hljs-variable">Counter</span> <span class="hljs-operator">-=</span> <span class="hljs-number">1</span>
+    <span class="hljs-keyword">set</span> <span class="hljs-variable">Counter</span> <span class="hljs-operator">*=</span> <span class="hljs-number">2</span>
+    <span class="hljs-keyword">set</span> <span class="hljs-variable">Counter</span> <span class="hljs-operator">/=</span> <span class="hljs-number">2</span>
+    <span class="hljs-keyword">set</span> <span class="hljs-variable">Counter</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>
+
+<span class="hljs-title function_">Rebind</span>()<span class="hljs-operator">:</span><span class="hljs-type">void</span> <span class="hljs-operator">=</span>
+    Immutable <span class="hljs-operator">:=</span> <span class="hljs-number">10</span>
+    <span class="hljs-keyword">var</span> <span class="hljs-variable">Mutable</span> <span class="hljs-operator">:</span> <span class="hljs-type">float</span> <span class="hljs-operator">=</span> <span class="hljs-number">1.0</span>
+    <span class="hljs-keyword">set</span> <span class="hljs-variable">Mutable</span> <span class="hljs-operator">=</span> <span class="hljs-number">2.0</span>

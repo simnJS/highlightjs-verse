@@ -1,0 +1,18 @@
+<span class="hljs-keyword">using</span> { <span class="hljs-symbol">/Verse.org/Simulation</span> }
+<span class="hljs-keyword">using</span> { <span class="hljs-symbol">/Fortnite.com/Devices</span> }
+<span class="hljs-keyword">using</span>. <span class="hljs-symbol">/UnrealEngine.com/Temporary/SpatialMath</span>
+
+<span class="hljs-title class_">my_device</span> <span class="hljs-operator">:=</span> <span class="hljs-keyword">class</span>(creative_device)<span class="hljs-operator">:</span>
+
+    <span class="hljs-meta">@editable</span>
+    TriggerDevice <span class="hljs-operator">:</span> trigger_device <span class="hljs-operator">=</span> <span class="hljs-title class_">trigger_device</span>{}
+
+    <span class="hljs-meta">@editable_number</span>
+    Rounds <span class="hljs-operator">:</span> <span class="hljs-type">int</span> <span class="hljs-operator">=</span> <span class="hljs-number">3</span>
+
+    <span class="hljs-title function_">Compute</span><span class="hljs-meta">&lt;public&gt;</span>(Value<span class="hljs-operator">:</span><span class="hljs-type">int</span>)<span class="hljs-meta">&lt;computes&gt;</span><span class="hljs-operator">:</span><span class="hljs-type">int</span> <span class="hljs-operator">=</span> Value <span class="hljs-operator">*</span> <span class="hljs-number">2</span>
+    <span class="hljs-title function_">Query</span><span class="hljs-meta">&lt;public&gt;</span>(Value<span class="hljs-operator">:</span><span class="hljs-type">int</span>)<span class="hljs-meta">&lt;decides&gt;</span><span class="hljs-meta">&lt;transacts&gt;</span><span class="hljs-operator">:</span><span class="hljs-type">int</span> <span class="hljs-operator">=</span> Value
+    <span class="hljs-title function_">Wait</span><span class="hljs-meta">&lt;public&gt;</span>()<span class="hljs-meta">&lt;suspends&gt;</span><span class="hljs-operator">:</span><span class="hljs-type">void</span> <span class="hljs-operator">=</span> <span class="hljs-title function_">Sleep</span>(<span class="hljs-number">1.0</span>)
+    <span class="hljs-title function_">Read</span><span class="hljs-meta">&lt;public&gt;</span>()<span class="hljs-meta">&lt;reads&gt;</span><span class="hljs-operator">:</span><span class="hljs-type">int</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>
+    <span class="hljs-title function_">Write</span><span class="hljs-meta">&lt;public&gt;</span>()<span class="hljs-meta">&lt;writes&gt;</span><span class="hljs-operator">:</span><span class="hljs-type">void</span> <span class="hljs-operator">=</span> {}
+    <span class="hljs-title function_">Make</span><span class="hljs-meta">&lt;public&gt;</span>()<span class="hljs-meta">&lt;allocates&gt;</span><span class="hljs-operator">:</span>my_device <span class="hljs-operator">=</span> <span class="hljs-title class_">my_device</span>{}

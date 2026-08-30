@@ -1,0 +1,25 @@
+<span class="hljs-keyword">using</span> { <span class="hljs-symbol">/Verse.org/Concurrency</span> }
+<span class="hljs-keyword">using</span> { <span class="hljs-symbol">/Verse.org/Simulation</span> }
+
+<span class="hljs-title function_">RunAll</span><span class="hljs-meta">&lt;public&gt;</span>()<span class="hljs-meta">&lt;suspends&gt;</span><span class="hljs-operator">:</span><span class="hljs-type">void</span> <span class="hljs-operator">=</span>
+    <span class="hljs-keyword">sync</span><span class="hljs-operator">:</span>
+        <span class="hljs-title function_">FirstTask</span>()
+        <span class="hljs-title function_">SecondTask</span>()
+
+<span class="hljs-title function_">RunFirst</span><span class="hljs-meta">&lt;public&gt;</span>()<span class="hljs-meta">&lt;suspends&gt;</span><span class="hljs-operator">:</span><span class="hljs-type">void</span> <span class="hljs-operator">=</span>
+    <span class="hljs-keyword">race</span><span class="hljs-operator">:</span>
+        <span class="hljs-title function_">LongTask</span>()
+        <span class="hljs-title function_">Sleep</span>(<span class="hljs-number">5.0</span>)
+
+<span class="hljs-title function_">RunAny</span><span class="hljs-meta">&lt;public&gt;</span>()<span class="hljs-meta">&lt;suspends&gt;</span><span class="hljs-operator">:</span><span class="hljs-type">void</span> <span class="hljs-operator">=</span>
+    <span class="hljs-keyword">rush</span><span class="hljs-operator">:</span>
+        <span class="hljs-title function_">FastTask</span>()
+        <span class="hljs-title function_">SlowTask</span>()
+
+<span class="hljs-title function_">RunDetached</span><span class="hljs-meta">&lt;public&gt;</span>()<span class="hljs-meta">&lt;suspends&gt;</span><span class="hljs-operator">:</span><span class="hljs-type">void</span> <span class="hljs-operator">=</span>
+    <span class="hljs-keyword">branch</span><span class="hljs-operator">:</span>
+        <span class="hljs-title function_">BackgroundTask</span>()
+    <span class="hljs-title function_">Print</span>(<span class="hljs-string">&quot;continues immediately&quot;</span>)
+
+<span class="hljs-title function_">Start</span><span class="hljs-meta">&lt;public&gt;</span>()<span class="hljs-operator">:</span><span class="hljs-type">void</span> <span class="hljs-operator">=</span>
+    <span class="hljs-keyword">spawn</span>{<span class="hljs-title function_">BackgroundTask</span>()}

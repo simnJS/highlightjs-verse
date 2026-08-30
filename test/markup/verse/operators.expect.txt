@@ -1,0 +1,18 @@
+Sum <span class="hljs-operator">:=</span> <span class="hljs-number">1</span> <span class="hljs-operator">+</span> <span class="hljs-number">2</span>
+Difference <span class="hljs-operator">:=</span> <span class="hljs-number">5</span> <span class="hljs-operator">-</span> <span class="hljs-number">3</span>
+Product <span class="hljs-operator">:=</span> <span class="hljs-number">4</span> <span class="hljs-operator">*</span> <span class="hljs-number">2</span>
+Quotient <span class="hljs-operator">:=</span> <span class="hljs-number">8</span> <span class="hljs-operator">/</span> <span class="hljs-number">2</span>
+
+Equal <span class="hljs-operator">:=</span> Sum <span class="hljs-operator">=</span> <span class="hljs-number">3</span>
+NotEqual <span class="hljs-operator">:=</span> Sum <span class="hljs-operator">&lt;&gt;</span> <span class="hljs-number">4</span>
+Less <span class="hljs-operator">:=</span> Sum <span class="hljs-operator">&lt;</span> <span class="hljs-number">10</span>
+LessEqual <span class="hljs-operator">:=</span> Sum <span class="hljs-operator">&lt;=</span> <span class="hljs-number">10</span>
+Greater <span class="hljs-operator">:=</span> Sum <span class="hljs-operator">&gt;</span> <span class="hljs-number">0</span>
+GreaterEqual <span class="hljs-operator">:=</span> Sum <span class="hljs-operator">&gt;=</span> <span class="hljs-number">0</span>
+
+Both <span class="hljs-operator">:=</span> Less <span class="hljs-keyword">and</span> Greater
+Either <span class="hljs-operator">:=</span> Less <span class="hljs-keyword">or</span> Greater
+Negated <span class="hljs-operator">:=</span> <span class="hljs-keyword">not</span> Less
+
+Lambda <span class="hljs-operator">:=</span> (X<span class="hljs-operator">:</span><span class="hljs-type">int</span>) <span class="hljs-operator">=&gt;</span> X <span class="hljs-operator">*</span> <span class="hljs-number">2</span>
+Arrow <span class="hljs-operator">:</span> <span class="hljs-type">type</span>{<span class="hljs-title function_">_</span>(<span class="hljs-operator">:</span><span class="hljs-type">int</span>)<span class="hljs-operator">:</span><span class="hljs-type">int</span>} <span class="hljs-operator">=</span> Lambda

@@ -1,0 +1,18 @@
+<span class="hljs-keyword">using</span> { <span class="hljs-symbol">/Fortnite.com/Devices</span> }
+<span class="hljs-keyword">using</span> { <span class="hljs-symbol">/Verse.org/Simulation</span> }
+
+<span class="hljs-comment"># A minimal UEFN device written in Verse.</span>
+<span class="hljs-title class_">hello_world_device</span> <span class="hljs-operator">:=</span> <span class="hljs-keyword">class</span>(creative_device)<span class="hljs-operator">:</span>
+
+    <span class="hljs-meta">@editable</span>
+    Button <span class="hljs-operator">:</span> button_device <span class="hljs-operator">=</span> <span class="hljs-title class_">button_device</span>{}
+
+    <span class="hljs-keyword">var</span> <span class="hljs-variable">Score</span><span class="hljs-meta">&lt;private&gt;</span> <span class="hljs-operator">:</span> <span class="hljs-type">int</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>
+
+    <span class="hljs-title function_">OnBegin</span><span class="hljs-meta">&lt;override&gt;</span>()<span class="hljs-meta">&lt;suspends&gt;</span><span class="hljs-operator">:</span><span class="hljs-type">void</span> <span class="hljs-operator">=</span>
+        Button.InteractedWithEvent.<span class="hljs-title function_">Subscribe</span>(OnInteracted)
+        <span class="hljs-title function_">Print</span>(<span class="hljs-string">&quot;Hello, Verse!&quot;</span>)
+
+    <span class="hljs-title function_">OnInteracted</span>(Agent<span class="hljs-operator">:</span>agent)<span class="hljs-operator">:</span><span class="hljs-type">void</span> <span class="hljs-operator">=</span>
+        <span class="hljs-keyword">set</span> <span class="hljs-variable">Score</span> <span class="hljs-operator">+=</span> <span class="hljs-number">1</span>
+        <span class="hljs-title function_">Print</span>(<span class="hljs-string">&quot;Score is now <span class="hljs-subst">{Score}</span>&quot;</span>)

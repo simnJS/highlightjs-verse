@@ -1,0 +1,14 @@
+var Counter : int = 0
+var Names : []string = array{}
+
+Increment():void =
+    set Counter += 1
+    set Counter -= 1
+    set Counter *= 2
+    set Counter /= 2
+    set Counter = 0
+
+Rebind():void =
+    Immutable := 10
+    var Mutable : float = 1.0
+    set Mutable = 2.0

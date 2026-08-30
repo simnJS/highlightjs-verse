@@ -1,0 +1,19 @@
+# `<decides>` marks a function that can fail; failable calls use square brackets.
+FindPlayer<public>(Players:[]player, Index:int)<decides><transacts>:player =
+    Players[Index]
+
+Safe(Players:[]player):void =
+    if (Found := FindPlayer[Players, 0]):
+        Print("found")
+    else:
+        Print("missing")
+
+    # `or` supplies a fallback when the left-hand side fails.
+    Value := FindPlayer[Players, 99] or Err("unreachable")
+
+Option(Maybe:?int):void =
+    # `?` queries an option, `not` negates a failable expression.
+    if (Inner := Maybe?):
+        Print("{Inner}")
+    if (not Maybe?):
+        Print("empty")

@@ -1,0 +1,27 @@
+interface Player {
+  name: string;
+  score: number;
+}
+
+type Registry = Map<string, Player>;
+
+export class Leaderboard<T extends Player> {
+  private readonly entries: Map<string, T> = new Map();
+
+  public add(entry: T): void {
+    this.entries.set(entry.name, entry);
+  }
+
+  public top(count: number): T[] {
+    return Array.from(this.entries.values())
+      .sort((a, b) => b.score - a.score)
+      .slice(0, count);
+  }
+}
+
+export function loadPlayers(raw: unknown): Player[] {
+  if (!Array.isArray(raw)) {
+    throw new Error("expected an array");
+  }
+  return raw.filter((row): row is Player => typeof row.name === "string");
+}

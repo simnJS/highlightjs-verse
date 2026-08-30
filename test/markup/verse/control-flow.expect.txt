@@ -1,0 +1,31 @@
+<span class="hljs-title function_">CheckValue</span>(Value<span class="hljs-operator">:</span><span class="hljs-type">int</span>)<span class="hljs-operator">:</span><span class="hljs-type">void</span> <span class="hljs-operator">=</span>
+    <span class="hljs-keyword">if</span> (Value <span class="hljs-operator">&gt;</span> <span class="hljs-number">0</span>)<span class="hljs-operator">:</span>
+        <span class="hljs-title function_">Print</span>(<span class="hljs-string">&quot;positive&quot;</span>)
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (Value <span class="hljs-operator">&lt;</span> <span class="hljs-number">0</span>)<span class="hljs-operator">:</span>
+        <span class="hljs-title function_">Print</span>(<span class="hljs-string">&quot;negative&quot;</span>)
+    <span class="hljs-keyword">else</span><span class="hljs-operator">:</span>
+        <span class="hljs-title function_">Print</span>(<span class="hljs-string">&quot;zero&quot;</span>)
+
+<span class="hljs-title function_">Iterate</span>(Items<span class="hljs-operator">:</span>[]<span class="hljs-type">int</span>)<span class="hljs-operator">:</span><span class="hljs-type">void</span> <span class="hljs-operator">=</span>
+    <span class="hljs-keyword">for</span> (Item <span class="hljs-operator">:</span> Items)<span class="hljs-operator">:</span>
+        <span class="hljs-title function_">Print</span>(<span class="hljs-string">&quot;<span class="hljs-subst">{Item}</span>&quot;</span>)
+
+    <span class="hljs-keyword">for</span> (Index <span class="hljs-operator">:=</span> <span class="hljs-number">0</span><span class="hljs-operator">..</span>Items.Length <span class="hljs-operator">-</span> <span class="hljs-number">1</span>, <span class="hljs-title function_">Mod</span>[Index, <span class="hljs-number">2</span>] <span class="hljs-operator">=</span> <span class="hljs-number">0</span>)<span class="hljs-operator">:</span>
+        <span class="hljs-title function_">Print</span>(<span class="hljs-string">&quot;even index <span class="hljs-subst">{Index}</span>&quot;</span>)
+
+<span class="hljs-title function_">Wait</span>()<span class="hljs-meta">&lt;suspends&gt;</span><span class="hljs-operator">:</span><span class="hljs-type">void</span> <span class="hljs-operator">=</span>
+    <span class="hljs-keyword">loop</span><span class="hljs-operator">:</span>
+        <span class="hljs-title function_">Sleep</span>(<span class="hljs-number">1.0</span>)
+        <span class="hljs-keyword">if</span> (IsDone<span class="hljs-operator">?</span>)<span class="hljs-operator">:</span>
+            <span class="hljs-keyword">break</span>
+
+<span class="hljs-title function_">Describe</span>(State<span class="hljs-operator">:</span>my_enum)<span class="hljs-operator">:</span><span class="hljs-type">string</span> <span class="hljs-operator">=</span>
+    <span class="hljs-keyword">case</span> (State)<span class="hljs-operator">:</span>
+        my_enum.Idle <span class="hljs-operator">=&gt;</span> <span class="hljs-string">&quot;idle&quot;</span>
+        my_enum.Running <span class="hljs-operator">=&gt;</span> <span class="hljs-string">&quot;running&quot;</span>
+        _ <span class="hljs-operator">=&gt;</span> <span class="hljs-string">&quot;unknown&quot;</span>
+
+<span class="hljs-title function_">Cleanup</span>()<span class="hljs-meta">&lt;suspends&gt;</span><span class="hljs-operator">:</span><span class="hljs-type">void</span> <span class="hljs-operator">=</span>
+    <span class="hljs-keyword">defer</span><span class="hljs-operator">:</span>
+        <span class="hljs-title function_">Print</span>(<span class="hljs-string">&quot;done&quot;</span>)
+    <span class="hljs-title function_">Sleep</span>(<span class="hljs-number">2.0</span>)

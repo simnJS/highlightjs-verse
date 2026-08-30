@@ -1,0 +1,19 @@
+<span class="hljs-comment"># `&lt;decides&gt;` marks a function that can fail; failable calls use square brackets.</span>
+<span class="hljs-title function_">FindPlayer</span><span class="hljs-meta">&lt;public&gt;</span>(Players<span class="hljs-operator">:</span>[]player, Index<span class="hljs-operator">:</span><span class="hljs-type">int</span>)<span class="hljs-meta">&lt;decides&gt;</span><span class="hljs-meta">&lt;transacts&gt;</span><span class="hljs-operator">:</span>player <span class="hljs-operator">=</span>
+    <span class="hljs-title function_">Players</span>[Index]
+
+<span class="hljs-title function_">Safe</span>(Players<span class="hljs-operator">:</span>[]player)<span class="hljs-operator">:</span><span class="hljs-type">void</span> <span class="hljs-operator">=</span>
+    <span class="hljs-keyword">if</span> (Found <span class="hljs-operator">:=</span> <span class="hljs-title function_">FindPlayer</span>[Players, <span class="hljs-number">0</span>])<span class="hljs-operator">:</span>
+        <span class="hljs-title function_">Print</span>(<span class="hljs-string">&quot;found&quot;</span>)
+    <span class="hljs-keyword">else</span><span class="hljs-operator">:</span>
+        <span class="hljs-title function_">Print</span>(<span class="hljs-string">&quot;missing&quot;</span>)
+
+    <span class="hljs-comment"># `or` supplies a fallback when the left-hand side fails.</span>
+    Value <span class="hljs-operator">:=</span> <span class="hljs-title function_">FindPlayer</span>[Players, <span class="hljs-number">99</span>] <span class="hljs-keyword">or</span> <span class="hljs-title function_">Err</span>(<span class="hljs-string">&quot;unreachable&quot;</span>)
+
+<span class="hljs-title function_">Option</span>(Maybe<span class="hljs-operator">:</span><span class="hljs-operator">?</span><span class="hljs-type">int</span>)<span class="hljs-operator">:</span><span class="hljs-type">void</span> <span class="hljs-operator">=</span>
+    <span class="hljs-comment"># `?` queries an option, `not` negates a failable expression.</span>
+    <span class="hljs-keyword">if</span> (Inner <span class="hljs-operator">:=</span> Maybe<span class="hljs-operator">?</span>)<span class="hljs-operator">:</span>
+        <span class="hljs-title function_">Print</span>(<span class="hljs-string">&quot;<span class="hljs-subst">{Inner}</span>&quot;</span>)
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">not</span> Maybe<span class="hljs-operator">?</span>)<span class="hljs-operator">:</span>
+        <span class="hljs-title function_">Print</span>(<span class="hljs-string">&quot;empty&quot;</span>)

@@ -1,0 +1,27 @@
+# Ruby also uses '#' comments and and/or/not keywords.
+require 'json'
+
+module Game
+  class Player
+    attr_accessor :name, :score
+
+    def initialize(name, score = 0)
+      @name = name
+      @score = score
+    end
+
+    def winner?(threshold)
+      score >= threshold and not name.empty?
+    end
+  end
+
+  def self.load_players(path)
+    JSON.parse(File.read(path)).map do |row|
+      Player.new(row['name'], row.fetch('score', 0))
+    end
+  end
+end
+
+Game.load_players('players.json').each do |player|
+  puts "#{player.name}: #{player.score}"
+end

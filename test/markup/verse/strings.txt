@@ -1,0 +1,8 @@
+Greeting : string = "Hello, Verse!"
+Escaped : string = "Tab:\t Newline:\n Quote:\" Brace:\{ Hash:\#"
+Interpolated : string = "Player {Name} scored {Score} points"
+Nested : string = "Total: {Points + Bonus} / {Max}"
+Letter : char = 'A'
+Escape : char = '\n'
+Utf8 : char = 0o41
+Utf32 : char32 = 0u1F600

@@ -1,0 +1,29 @@
+using { /Fortnite.com/Devices }
+using { /Fortnite.com/Characters }
+using { /Verse.org/Simulation }
+using { /UnrealEngine.com/Temporary/Diagnostics }
+
+# A round-based elimination tracker device.
+elimination_tracker_device<public> := class(creative_device):
+
+    @editable
+    EndGameDevice : end_game_device = end_game_device{}
+
+    @editable
+    ScoreThreshold : int = 10
+
+    var ScoreMap : [agent]int = map{}
+
+    OnBegin<override>()<suspends>:void =
+        AllPlayers := GetPlayspace().GetPlayers()
+        for (Player : AllPlayers, FortCharacter := Player.GetFortCharacter[]):
+            FortCharacter.EliminatedEvent().Subscribe(OnEliminated)
+
+    OnEliminated(Result:elimination_result):void =
+        if (Eliminator := Result.EliminatingCharacter?, Agent := Eliminator.GetAgent[]):
+            CurrentScore := ScoreMap[Agent] or 0
+            NewScore := CurrentScore + 1
+            if (set ScoreMap[Agent] = NewScore):
+                Print("Agent scored {NewScore}")
+                if (NewScore >= ScoreThreshold):
+                    EndGameDevice.Activate(Agent)

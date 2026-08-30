@@ -1,0 +1,33 @@
+unit PlayerUnit;
+
+interface
+
+type
+  TPlayer = class(TObject)
+  private
+    FName: string;
+    FScore: Integer;
+  public
+    constructor Create(const AName: string);
+    function IsWinner(Threshold: Integer): Boolean;
+    property Score: Integer read FScore write FScore;
+  end;
+
+implementation
+
+constructor TPlayer.Create(const AName: string);
+begin
+  inherited Create;
+  FName := AName;
+  FScore := 0;
+end;
+
+function TPlayer.IsWinner(Threshold: Integer): Boolean;
+begin
+  if (FScore >= Threshold) and (FName <> '') then
+    Result := True
+  else
+    Result := False;
+end;
+
+end.

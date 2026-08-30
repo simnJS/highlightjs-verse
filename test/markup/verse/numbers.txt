@@ -1,0 +1,11 @@
+Count : int = 42
+Negative : int = -7
+Pi : float = 3.14159
+Scientific : float = 1.5e10
+Small : float = 2.5e-3
+Hex : int = 0xDEADBEEF
+HexLower : int = 0xff
+Range := 0..10
+Inclusive := 1..Count
+Special : float = Inf
+NotANumber : float = NaN

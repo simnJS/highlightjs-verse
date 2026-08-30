@@ -1,0 +1,13 @@
+# A Verse line comment
+MyValue := 42 # trailing comment
+
+<# A single line block comment #>
+
+<#
+    A multi-line block comment.
+    It runs until the closing marker.
+#>
+
+<# Block comments <# can be nested <# arbitrarily deep #> like this #> too #>
+
+<#> An indented block comment marker.
