@@ -143,7 +143,7 @@ so it can be cited. Keep it short; feedback posts are triaged, not read closely.
 | Step | State |
 | :--- | :--- |
 | highlight.js grammar written and tested | done |
-| Listed in highlight.js `SUPPORTED_LANGUAGES.md` | pull request open |
+| Listed in highlight.js `SUPPORTED_LANGUAGES.md` | [highlightjs/highlight.js#4524](https://github.com/highlightjs/highlight.js/pull/4524) open |
 | Published to npm | not done — maintainer decision |
 | Submitted to Discord feedback | not done — blocked on the listing above |
 | Adopted by Discord | out of our hands |

@@ -17,6 +17,12 @@ grammar. It is maintained by the author of
 [`simnJS/verse-grammar`](https://github.com/simnJS/verse-grammar), the TextMate
 grammar GitHub Linguist uses for `.verse` files.
 
+> Listing in highlight.js's `SUPPORTED_LANGUAGES.md` is pending in
+> [highlightjs/highlight.js#4524](https://github.com/highlightjs/highlight.js/pull/4524).
+> highlight.js [no longer merges new languages into core](https://highlightjs.readthedocs.io/en/latest/language-requests.html)
+> or hosts third-party grammar repositories, so a self-hosted package plus that
+> listing is the current documented path.
+
 ```verse
 using { /Fortnite.com/Devices }
 using { /Verse.org/Simulation }
