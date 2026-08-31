@@ -72,8 +72,12 @@ rendering behaviour, so it is not the right venue for this.
    [`SUPPORTED_LANGUAGES.md`](https://github.com/highlightjs/highlight.js/blob/main/SUPPORTED_LANGUAGES.md)
    lists Verse as of
    [highlightjs/highlight.js#4524](https://github.com/highlightjs/highlight.js/pull/4524).
-3. **The package is published to npm**, so adding it is a dependency bump rather
-   than vendoring a file. *(Maintainer decision — not yet done.)*
+3. **The package is installable by name**, so adding it is a dependency bump
+   rather than vendoring a file. *(Blocked: the npm name `highlightjs-verse` is
+   taken by [a separate Verse grammar](https://github.com/abdelrahman-mohammad/highlightjs-verse)
+   published in April 2026. Consolidating the two is being discussed in
+   [their issue #10](https://github.com/abdelrahman-mohammad/highlightjs-verse/issues/10);
+   the outcome decides which package Discord would be asked to add.)*
 4. **Discord adds `highlightjs-verse` to its bundle** and registers `verse`.
    This is a Discord product decision; nothing outside Discord can force it.
 
@@ -147,6 +151,6 @@ closely.
 | :--- | :--- |
 | highlight.js grammar written and tested | done |
 | Listed in highlight.js `SUPPORTED_LANGUAGES.md` | done — [#4524](https://github.com/highlightjs/highlight.js/pull/4524) merged 30 Aug 2026 |
-| Published to npm | not done — maintainer decision |
-| Submitted to Discord feedback | ready to send once published to npm |
+| Installable from npm by name | blocked — name owned by [another Verse grammar](https://github.com/abdelrahman-mohammad/highlightjs-verse); consolidation proposed |
+| Submitted to Discord feedback | ready to send once the package question is settled |
 | Adopted by Discord | out of our hands |

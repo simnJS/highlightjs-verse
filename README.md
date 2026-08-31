@@ -1,7 +1,6 @@
 # highlightjs-verse
 
 [![CI](https://github.com/simnJS/highlightjs-verse/actions/workflows/ci.yml/badge.svg)](https://github.com/simnJS/highlightjs-verse/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/npm/v/highlightjs-verse.svg)](https://www.npmjs.com/package/highlightjs-verse)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 A [Verse](https://dev.epicgames.com/documentation/en-us/uefn/verse-language-reference)
@@ -51,8 +50,25 @@ score_tracker_device := class(creative_device):
 
 ## Installation
 
+> **Not on npm.** The name `highlightjs-verse` on npm belongs to a
+> [separate Verse grammar](https://github.com/abdelrahman-mohammad/highlightjs-verse)
+> by another author, published before this one — `npm install highlightjs-verse`
+> installs *that* package, not this one. See
+> [Related work](#related-work) below; consolidating the two is being discussed
+> in [their issue #10](https://github.com/abdelrahman-mohammad/highlightjs-verse/issues/10).
+
+Until that is settled, use the CDN or a git dependency.
+
+**jsDelivr** (served straight from this repository):
+
+```html
+<script src="https://cdn.jsdelivr.net/gh/simnJS/highlightjs-verse@main/dist/verse.min.js"></script>
+```
+
+**git dependency:**
+
 ```bash
-npm install highlightjs-verse
+npm install github:simnJS/highlightjs-verse
 ```
 
 Or load a prebuilt file from `dist/` directly in a browser.
@@ -93,9 +109,13 @@ The `dist/verse.js` build registers itself, so load it after highlight.js:
 
 ### From a CDN
 
+jsDelivr serves this repository directly, so no npm publish is required:
+
 ```html
-<script src="https://unpkg.com/highlightjs-verse/dist/verse.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/simnJS/highlightjs-verse@main/dist/verse.min.js"></script>
 ```
+
+Pin a tag or commit instead of `@main` for production.
 
 ### Highlighting a single block
 
@@ -197,6 +217,20 @@ for highlight.js: TextMate and highlight.js use different grammar models, so the
 syntax knowledge was carried over and re-expressed rather than converted.
 
 Both are MIT licensed and maintained by the same author.
+
+## Related work
+
+[`abdelrahman-mohammad/highlightjs-verse`](https://github.com/abdelrahman-mohammad/highlightjs-verse)
+is an independent Verse grammar for highlight.js, published to npm as
+`highlightjs-verse` in April 2026 — before this one, and without my knowledge
+while writing it. It derives its token colours from Epic's official VS Code
+extension and ships a matching `verse-dark` theme and TypeScript definitions,
+neither of which this package has.
+
+Two competing grammars serve nobody, so consolidation is being discussed in
+[their issue #10](https://github.com/abdelrahman-mohammad/highlightjs-verse/issues/10).
+Until that resolves, prefer whichever fits your needs; if you want the Epic
+colour theme, use theirs.
 
 ## GitHub Linguist
 
