@@ -68,9 +68,10 @@ rendering behaviour, so it is not the right venue for this.
 1. **A maintained, tested, third-party highlight.js grammar exists.** — done,
    this repository.
 2. **highlight.js lists it publicly**, so Discord can find it and see it is real
-   rather than a one-off gist. This is the
+   rather than a one-off gist. — done,
    [`SUPPORTED_LANGUAGES.md`](https://github.com/highlightjs/highlight.js/blob/main/SUPPORTED_LANGUAGES.md)
-   entry, which is the process highlight.js documents for third-party grammars.
+   lists Verse as of
+   [highlightjs/highlight.js#4524](https://github.com/highlightjs/highlight.js/pull/4524).
 3. **The package is published to npm**, so adding it is a dependency bump rather
    than vendoring a file. *(Maintainer decision — not yet done.)*
 4. **Discord adds `highlightjs-verse` to its bundle** and registers `verse`.
@@ -100,8 +101,10 @@ unsolicited direct contact with Discord staff.
 
 ## Draft feature request
 
-To be submitted once the highlight.js `SUPPORTED_LANGUAGES.md` entry is merged,
-so it can be cited. Keep it short; feedback posts are triaged, not read closely.
+The `SUPPORTED_LANGUAGES.md` entry is merged and can now be cited. Publishing to
+npm first is still worth doing, so the ask is a dependency bump rather than
+"vendor this file". Keep the post short; feedback items are triaged, not read
+closely.
 
 > **Title:** Add Verse (Epic Games / UEFN) to code block syntax highlighting
 >
@@ -143,7 +146,7 @@ so it can be cited. Keep it short; feedback posts are triaged, not read closely.
 | Step | State |
 | :--- | :--- |
 | highlight.js grammar written and tested | done |
-| Listed in highlight.js `SUPPORTED_LANGUAGES.md` | [highlightjs/highlight.js#4524](https://github.com/highlightjs/highlight.js/pull/4524) open |
+| Listed in highlight.js `SUPPORTED_LANGUAGES.md` | done — [#4524](https://github.com/highlightjs/highlight.js/pull/4524) merged 30 Aug 2026 |
 | Published to npm | not done — maintainer decision |
-| Submitted to Discord feedback | not done — blocked on the listing above |
+| Submitted to Discord feedback | ready to send once published to npm |
 | Adopted by Discord | out of our hands |
