@@ -1,7 +1,11 @@
 # highlightjs-verse
 
+A native highlight.js grammar for Verse, the programming language of Epic Games' UEFN and Fortnite Creative.
+
 [![CI](https://github.com/simnJS/highlightjs-verse/actions/workflows/ci.yml/badge.svg)](https://github.com/simnJS/highlightjs-verse/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+## What it is
 
 A [Verse](https://dev.epicgames.com/documentation/en-us/uefn/verse-language-reference)
 language grammar for [highlight.js](https://highlightjs.org/).
@@ -48,11 +52,21 @@ score_tracker_device := class(creative_device):
         Total
 ```
 
-## Installation
+## Features
+
+- Native highlight.js language definition (`src/languages/verse.js`), registered under the `verse` identifier
+- Covers comments (including nested block comments), strings with interpolation, characters, numbers, definitions, functions, archetypes, specifiers, attributes, mutability, control flow, failure, concurrency, containers, types, modules and operators (see [Language coverage](#language-coverage))
+- Auto-detection tuned so Verse is recognised by Verse-only constructs, and guarded against claiming Bash, C++, Delphi, Go, PowerShell, Python, Ruby or TypeScript sources
+- Prebuilt ESM, CommonJS and self-registering browser bundles committed in `dist/`, so it works from a CDN or a git dependency without an npm publish
+- Markup snapshot tests and auto-detection tests under Mocha, run in CI along with a check that `dist/` is up to date
+
+## Getting started
+
+### Install
 
 > **Not on npm.** The name `highlightjs-verse` on npm belongs to a
 > [separate Verse grammar](https://github.com/abdelrahman-mohammad/highlightjs-verse)
-> by another author, published before this one — `npm install highlightjs-verse`
+> by another author, published before this one: `npm install highlightjs-verse`
 > installs *that* package, not this one. See
 > [Related work](#related-work) below; consolidating the two is being discussed
 > in [their issue #10](https://github.com/abdelrahman-mohammad/highlightjs-verse/issues/10).
@@ -73,9 +87,11 @@ npm install github:simnJS/highlightjs-verse
 
 Or load a prebuilt file from `dist/` directly in a browser.
 
-## Usage
+highlight.js `^11.11.0` is a peer dependency.
 
-### Node, bundlers, ESM
+### Usage
+
+#### Node, bundlers, ESM
 
 ```javascript
 import hljs from 'highlight.js';
@@ -85,7 +101,7 @@ hljs.registerLanguage('verse', verse);
 hljs.highlightAll();
 ```
 
-### CommonJS
+#### CommonJS
 
 ```javascript
 const hljs = require('highlight.js');
@@ -95,7 +111,7 @@ hljs.registerLanguage('verse', verse);
 hljs.highlightAll();
 ```
 
-### Static website
+#### Static website
 
 The `dist/verse.js` build registers itself, so load it after highlight.js:
 
@@ -107,7 +123,7 @@ The `dist/verse.js` build registers itself, so load it after highlight.js:
 </script>
 ```
 
-### From a CDN
+#### From a CDN
 
 jsDelivr serves this repository directly, so no npm publish is required:
 
@@ -117,7 +133,7 @@ jsDelivr serves this repository directly, so no npm publish is required:
 
 Pin a tag or commit instead of `@main` for production.
 
-### Highlighting a single block
+#### Highlighting a single block
 
 Once registered, the `verse` identifier works like any built-in language:
 
@@ -199,7 +215,7 @@ Two suites run under Mocha:
 
 - **`test/markup.js`** compares highlighted output against the checked-in
   `test/markup/verse/*.expect.txt` snapshots. Expectations are generated with
-  `tools/generate-expect.js` and reviewed by hand — regenerate only after
+  `tools/generate-expect.js` and reviewed by hand: regenerate only after
   reading the diff, or a regression becomes the new baseline.
 - **`test/detect.js`** registers Verse alongside 24 built-in grammars and
   asserts that real Verse is auto-detected as `verse`, and that unrelated
@@ -222,8 +238,8 @@ Both are MIT licensed and maintained by the same author.
 
 [`abdelrahman-mohammad/highlightjs-verse`](https://github.com/abdelrahman-mohammad/highlightjs-verse)
 is an independent Verse grammar for highlight.js, published to npm as
-`highlightjs-verse` in April 2026 — before this one, and without my knowledge
-while writing it. It derives its token colours from Epic's official VS Code
+`highlightjs-verse` in April 2026 (before this one, and without my knowledge
+while writing it). It derives its token colours from Epic's official VS Code
 extension and ships a matching `verse-dark` theme and TypeScript definitions,
 neither of which this package has.
 
@@ -254,16 +270,23 @@ highlighting stack and what would have to happen next.
 
 ## References
 
-- [Verse Language Reference](https://dev.epicgames.com/documentation/en-us/uefn/verse-language-reference) — Epic Games
-- [Book of Verse](https://verselang.github.io/book/) — community reference (CC0-1.0)
+- [Verse Language Reference](https://dev.epicgames.com/documentation/en-us/uefn/verse-language-reference) (Epic Games)
+- [Book of Verse](https://verselang.github.io/book/) (community reference, CC0-1.0)
 - [highlight.js](https://github.com/highlightjs/highlight.js) and its
   [language definition guide](https://highlightjs.readthedocs.io/en/latest/language-guide.html)
-- [`simnJS/verse-grammar`](https://github.com/simnJS/verse-grammar) — the TextMate grammar
-- [github-linguist/linguist#7440](https://github.com/github-linguist/linguist/pull/7440) — Linguist support for Verse
+- [`simnJS/verse-grammar`](https://github.com/simnJS/verse-grammar): the TextMate grammar
+- [github-linguist/linguist#7440](https://github.com/github-linguist/linguist/pull/7440): Linguist support for Verse
 
-## Licence
+## Tech stack
 
-MIT — see [LICENSE](LICENSE).
+- JavaScript (ES modules), highlight.js 11 language API
+- Rollup with `@rollup/plugin-terser` for the ESM, CommonJS and browser bundles
+- Mocha and should.js for the markup and detection tests
+- GitHub Actions CI on Node 22
+
+## License
+
+MIT, see [LICENSE](LICENSE).
 
 Two auto-detection fixtures are reused from
 [`sprintermax/UEFNVerseSnippets`](https://github.com/sprintermax/UEFNVerseSnippets)
